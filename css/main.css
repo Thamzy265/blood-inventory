@@ -1,0 +1,53 @@
+
+.form-main{
+    width: 40%;
+}
+.main{
+    height: 92vh;
+}
+.side-menu{
+    background-color: #9f3224;
+    height: 100%;
+    width: 22vw;  
+}
+.bg-head{
+    background-color: #683025;
+    width: 19%; 
+}
+nav{
+    height: 6rem;
+    width: 100%;
+}
+.bolder{
+    font-weight: 800;
+}
+.bg-l{
+    background-color: #eae2e0;
+    width: 85%;
+}
+.white-grey{
+    background-color: #eae2e0;
+}
+.nav-side{
+    background-color: #f0c2b3;
+}
+.nav-side-select{
+    background-color: #ef907c;
+}
+.em-color{
+    background-color: #9f3224;
+}
+.fi-color{
+    background-color: #e1261c;
+}
+.cus-color{
+    color: #b36055;
+}
+.ti-color{
+    font-size: 2rem;
+    color: #b77168;
+}
+#chart-container {
+   
+    height: auto;
+}

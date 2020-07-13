@@ -1,0 +1,6 @@
+<a href="?page=admin" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin"){  echo "nav-side-select"; }?>">Home</a>
+<a href="?page=admin_accounts" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin_accounts"){  echo "nav-side-select"; }?>">Account</a>
+<a href="?page=admin_users" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin_users"){  echo "nav-side-select"; }?>">Users</a>
+<a href="?page=admin_inventory" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin_inventory"){  echo "nav-side-select"; }?>">Inventory</a>
+<a href="?page=admin_messages" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin_messages"){  echo "nav-side-select"; }?>">Messages</a>
+<a href="?page=admin_emergency" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "admin_emergency"){  echo "nav-side-select"; }?>">Emergency</a>

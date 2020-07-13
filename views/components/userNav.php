@@ -1,0 +1,4 @@
+<a href="?page=home" class="list-group-item list-group-item-action nav-side text-light  <?php if($page == "home"){  echo "nav-side-select"; }?> ">Home</a>
+<a href="?page=group" class="list-group-item list-group-item-action nav-side text-light <?php if($page == "group"){  echo "nav-side-select"; }?>">Find Blood group</a>
+<a href="?page=profile" class="list-group-item list-group-item-action nav-side text-light <?php if($page == "profile"){  echo "nav-side-select"; }?>">Profile</a>
+<a href="?page=account" class="list-group-item list-group-item-action nav-side text-light <?php if($page == "account"){  echo "nav-side-select"; }?>">Account</a>

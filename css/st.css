@@ -1,0 +1,32 @@
+.log-card{
+    position: relative;
+    margin-top: 5rem;
+    border-radius: 15%;
+}
+.log-img{
+    position: absolute;
+    height: 15rem;
+    right: 4rem;
+    top: -7rem;
+
+}
+.log-form{
+    padding-top: 7rem;
+}
+.reg-form{
+    border-radius: 18%;
+}
+.main-p{
+    font-size: 2rem;
+}
+.bg-lr{
+    background-color: rgb(224, 138, 112);
+    padding-top: 5rem;
+}
+.bg-danger{
+    background-color: #683025;
+}
+.admin-logo img{
+    padding-left: 5rem;
+    height: 1.5rem;
+}

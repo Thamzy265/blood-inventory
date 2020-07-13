@@ -1,0 +1,14 @@
+head-side-color #683025
+side-main-color #9f3224
+head-light
+
+.form-main{
+    width: 40%;
+}
+.main{
+    height: 92vh;
+}
+.side-menu{
+    height: 100%;
+    width: 22vw;
+}
