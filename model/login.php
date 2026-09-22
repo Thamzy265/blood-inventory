@@ -21,7 +21,18 @@ class Login extends model
    
     }
     public function logTbl($name,$pass){
-        $sql = "SELECT * FROM `users` WHERE `username`='{$name}' OR `phone_number`='{$name}' AND `password`='{$pass}'";
+        /*
+         * The user gives a user name or a telephone number. The password must
+         * agree in the two conditions.
+         *
+         * The brackets around the OR condition are necessary. AND has a higher
+         * priority than OR. Without the brackets the database reads the
+         * condition as:
+         *     username = $name OR (phone_number = $name AND password = $pass)
+         * A user can then log in with a correct user name and an incorrect
+         * password.
+         */
+        $sql = "SELECT * FROM `users` WHERE (`username`='{$name}' OR `phone_number`='{$name}') AND `password`='{$pass}'";
         if ($query = self::$mysqli->query($sql)){
             $rows = $this->getRows($query);
             if ($rows >= 1){
@@ -32,23 +43,22 @@ class Login extends model
                
                 $sesHelper->setSession('user_id',$result['id']);
 
-
-                if ($query = self::$mysqli->query($sql)){
-                    $rows = $this->getRows($query);
-                    if ($rows >=1){
-                        if($result['status']){
-                            $result = $query->fetch_assoc();
-                            $fullName = $result['f_name']." ".$result['l_name'];
-                            $sesHelper->setSession('username',$fullName);
-                            $sesHelper->setSession('BBlog',$result['phone_number']);
-                        }else{
-                            header("location: /blood/verify.php");
-                        }
-                        
-
-                      return true;
-                    }
+                /*
+                 * The column `status` holds the string 'false' until the user
+                 * verifies the account. The verification sets the value to '1'.
+                 * Compare the value with '1'. Do not use a truth test: PHP
+                 * reads the string 'false' as true.
+                 */
+                if ((string) $result['status'] === '1'){
+                    $fullName = $result['f_name']." ".$result['l_name'];
+                    $sesHelper->setSession('username',$fullName);
+                    $sesHelper->setSession('BBlog',$result['phone_number']);
+                }else{
+                    //the user did not verify the account
+                    header("location: /blood/verify.php");
                 }
+
+                return true;
 
             }else{
                 //when credentials are incorrect
